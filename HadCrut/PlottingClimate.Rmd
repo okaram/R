@@ -43,5 +43,6 @@ Now there's no clear trend. Time to learn more about time series analysis (which
 * It seems temperatures are trending up over a long period
 * The trend recently is a lot less clear
 
+But of course, the best thing is that *you* can now play and convince yourself.
 
 

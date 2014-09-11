@@ -1,0 +1,26 @@
+---
+title: "IslandOfGames"
+output: html_document
+---
+
+Saw the [Island of Games Puzzle](http://www.datasciencecentral.com/profiles/blogs/island-of-games-puzzle-problem-statement) and decided to try to analyze it. Downloaded the excel sheet, and savead as a CSV.
+
+
+```{r}
+i=read.table("IslandOfGamesData.txt", header=TRUE)
+```
+
+We know (from the problem) that variables do not appear correlated individually; let's try adding two of them ...
+
+```{r}
+plot(i$RCube,i$Chess+i$Checkers)
+```
+
+Hmm, the data looks very different when RCube is less than around 0.5 than when it is more; lets try
+
+```{r}
+plot(i$Chess[i$RCube>0.5],i$Checkers[i$RCube>0.5])
+ plot(i$Chess[i$RCube<0.5],i$Checkers[i$RCube<0.5])
+```
+
+Cool. Now we see the relation.
